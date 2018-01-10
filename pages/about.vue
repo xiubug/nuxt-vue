@@ -7,6 +7,19 @@
 
 <script>
 export default {
+  data () {
+    return {
+      title: 'Nuxt - About'
+    }
+  },
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        { hid: 'description', name: 'description', content: 'About of Nuxt' }
+      ]
+    }
+  },
   asyncData () {
     return {
       name: process.static ? 'static' : (process.server ? 'server' : 'client')

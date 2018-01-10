@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/sosout/nuxt-vue#readme",
   "dependencies": {
-    "nuxt": "^1.0.0"
+    "lru-cache": "^4.0.2",
+    "nuxt": "latest"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

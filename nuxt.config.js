@@ -1,4 +1,12 @@
 module.exports = {
+  render: {
+    bundleRenderer: {
+      cache: require('lru-cache')({
+        max: 1000,
+        maxAge: 1000 * 60 * 15
+      })
+    }
+  },
   dev: (process.env.NODE_ENV !== 'production'),
   css: [
     'assets/main.css'
@@ -7,7 +15,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'my-project',
+    title: 'nuxt-vue',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
