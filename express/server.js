@@ -1,3 +1,4 @@
+const opn = require('opn');
 const { Nuxt, Builder } = require('nuxt')
 const app = require('express')()
 const port = process.env.PORT || 8888
@@ -17,5 +18,9 @@ if (config.dev) {
 }
 
 // 监听指定端口
-app.listen(port, '0.0.0.0')
-console.log('> 服务器运行于 http://localhost:' + port)
+app.listen(port, 'localhost', function () {
+  console.log('成功开启'+ port +'端口');
+  var url = 'http://localhost:' + port;
+  console.log('> 服务器运行于 ' + url + '\n');
+  opn(url);
+})
